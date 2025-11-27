@@ -26,7 +26,6 @@ sales = [
     {"branch": "Mombasa", "item": "Tablet", "category": "Electronics",
      "price": 310, "quantity": 2, "discount": 0.00, "date": "2025-01-06"},
 ]
-# Extract a list of all unique items sold across all branches. Name the result: unique_items.
 unique_items = list(set([sale['item'] for sale in sales]))
 print("Unique Items:", unique_items) 
 
