@@ -26,9 +26,13 @@ sales = [
     {"branch": "Mombasa", "item": "Tablet", "category": "Electronics",
      "price": 310, "quantity": 2, "discount": 0.00, "date": "2025-01-06"},
 ]
+# Extract a list of all unique items sold across all branches. Name the result: unique_items.
 unique_items = list(set([sale['item'] for sale in sales]))
 print("Unique Items:", unique_items) 
 
+
+
+# Using unique_items from Part 1, create a dictionary mapping each item to its total net revenue across all records.
 item_net_revenue = {item: sum((sale["price"] * sale["quantity"]) * (1 - sale["discount"])
         for sale in sales
         if sale["item"] == item
@@ -36,3 +40,8 @@ item_net_revenue = {item: sum((sale["price"] * sale["quantity"]) * (1 - sale["di
     for item in unique_items
 }
 item_net_revenue
+
+
+# Using item_net_revenue from Part 2, create a list of items whose total net revenue exceeds 2000. Name the result: top_items.
+top_items = [item for item, net_revenue in item_net_revenue.items() if net_revenue > 2000]
+top_items
