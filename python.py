@@ -26,6 +26,7 @@ sales = [
     {"branch": "Mombasa", "item": "Tablet", "category": "Electronics",
      "price": 310, "quantity": 2, "discount": 0.00, "date": "2025-01-06"},
 ]
+
 unique_items = list(set([sale['item'] for sale in sales]))
 print("Unique Items:", unique_items) 
 
