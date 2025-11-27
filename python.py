@@ -45,3 +45,7 @@ item_net_revenue
 # Using item_net_revenue from Part 2, create a list of items whose total net revenue exceeds 2000. Name the result: top_items.
 top_items = [item for item, net_revenue in item_net_revenue.items() if net_revenue > 2000]
 top_items
+
+# Using top_items from Part 3, create a new list containing only the sales records for these items.
+filtered_sales = [sale for sale in sales if sale['item'] in top_items]
+filtered_sales
